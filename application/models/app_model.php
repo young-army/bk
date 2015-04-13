@@ -41,6 +41,18 @@ class App_model extends CI_Model{
 		$this->db->update($table,$data);
 	}
 	
+<<<<<<< HEAD
+	function ambil_services(){
+		$query = $this->db->query("select * from services")->result();
+		return $query;
+	}
+	
+	function simpan_services(){
+		$judul = $this->input->post('judul');
+		$author = $this->input->post('author');
+		$uraian = $this->input->post('uraian');
+		$gambar = $this->input->post('image_name');
+=======
 	function expertise()
 	{
 		$query=$this->db->query("select * from expertise")->result();
@@ -52,11 +64,40 @@ class App_model extends CI_Model{
 		$judul = $this->input->post('judul');
 		$author = $this->input->post('author');
 		$uraian = $this->input->post('uraian');
+>>>>>>> 2b5753820639722b45f77aa2efc36e45843a259f
 		$status = $this->input->post('status');
 		$data = array(
 		'judul' => $judul,
 		'author' => $author,
 		'keterangan' => $uraian,
+<<<<<<< HEAD
+		'gambar' => $gambar,
+		'status' => $status
+		);
+		$this->db->insert('services',$data);
+	}
+	
+	function delete_services($id){
+		$this->db->where('id',$id);
+		$this->db->delete('services');
+	}
+	
+	function edit_services($id){
+		$hasil = $this->db->query("select * from services where id='$id'")->row();
+		return $hasil;
+	}
+	
+	function update_services($id){
+		$judul = $this->input->post('judul');
+		$author = $this->input->post('author');
+		$uraian = $this->input->post('uraian');
+		$gambar = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		
+		$this->db->query("update services set judul='$judul',author='$author',keterangan='$uraian',gambar='$gambar',status='$status' where id='$id'");
+	}
+
+=======
 		'status' => $status
 		);
 		
@@ -83,4 +124,5 @@ class App_model extends CI_Model{
 	
 		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
 	}
+>>>>>>> 2b5753820639722b45f77aa2efc36e45843a259f
 }

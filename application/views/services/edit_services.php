@@ -19,34 +19,35 @@
                 <!-- BEGIN EXAMPLE TABLE widget-->
                 <div class="widget black">
                         <div class="widget-title">
-                            <h4><i class="icon-reorder"></i> Tambah Data Services</h4>
+                            <h4><i class="icon-reorder"></i> Edit Services</h4>
 							
 						</div>
                         <div class="widget-body">
                             <!-- BEGIN FORM-->
-                            <form method="post" action="<?php echo base_url();?>dashboard/simpan_services" class="form-horizontal" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo base_url();?>dashboard/update_services" class="form-horizontal" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="<?php echo $services->id;?>">
                             <div class="control-group">
                                 <label class="control-label">Judul</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="judul"/>
+                                    <input type="text" class="span6 " name="judul" value="<?php echo $services->judul;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Author</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="author"/>
+                                    <input type="text" class="span6 " name="author" value="<?php echo $services->author;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Uraian</label>
                                 <div class="controls">
-                                    <textarea class="span6 " name="uraian"></textarea>
+                                    <textarea class="span6 " name="uraian" ><?php echo $services->keterangan;?></textarea>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">File Gambar</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="image_name" style="width:150px"/>
+                                    <input type="text" class="span6 " name="image_name" style="width:150px" value="<?php echo $services->gambar;?>"/>
                                     <input type="file" class="span6 " name="image" />
                                 </div>
                             </div>
