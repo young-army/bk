@@ -1,5 +1,52 @@
 <ul class="sidebar-menu">
-				<li class="sub-menu">
+			  <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-heart"></i>
+                      <span>About Us</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="<?php echo base_url();?>dashboard/profile">Profile</a></li>
+                      <li><a class="" href="<?php echo base_url();?>dashboard/vision">Vision</a></li>
+                      <li><a class="" href="<?php echo base_url();?>dashboard/people">People</a></li>
+                  </ul>
+              </li>
+			  <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-leaf"></i>
+                      <span>Products</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="<?php echo base_url();?>dashboard/consulting">Consulting</a></li>
+                      <li><a class="" href="<?php echo base_url();?>dashboard/research">Research</a></li>
+                      <li><a class="" href="<?php echo base_url();?>dashboard/training">Training</a></li>
+                  </ul>
+              </li>
+			  <li class="sub-menu">
+                  <a href="#" class="">
+                      <i class="icon-star"></i>
+                      <span>Inspirator</span>
+                   </a>
+              </li>
+			  <li class="sub-menu">
+                  <a href="#" class="">
+                      <i class="icon-calendar"></i>
+                      <span>Events</span>
+                   </a>
+              </li>
+			  <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-user"></i>
+                      <span>Clients</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="<?php echo base_url();?>dashboard/consulting">Clients</a></li>
+                      <li><a class="" href="<?php echo base_url();?>dashboard/research">Projects</a></li>
+                  </ul>
+              </li>
+			  <li class="sub-menu" style="border-top:2px solid gray">
                   <a href="javascript:;" class="">
                       <i class="icon-align-justify"></i>
                       <span>Menu Front</span>
@@ -38,14 +85,30 @@
                       <span>Market Analytics</span>
                   </a>
               </li>
+			  <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-user"></i>
+                      <span>User Management</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="<?php echo base_url();?>dashboard/user_access">User Access</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/user_group">User Group</a></li>
+                  </ul>
+              </li>
+			  <li>
+                  <a class="" href="<?php echo base_url();?>dashboard/master_data">
+                      <i class="icon-th-large"></i>
+                      <span>Master Data</span>
+                  </a>
+              </li>
               <li>
                   <a class="" href="<?php echo base_url();?>dashboard/setting">
                       <i class="icon-cog"></i>
                       <span>Setting</span>
                   </a>
               </li>
-			  <li>&nbsp;</li>
-			  <li>
+			  <li style="border-top:2px solid gray">
                   <a class="" href="<?php echo base_url();?>login/logout">
                     <i class="icon-arrow-left"></i>
                     <span>Log Out</span>
