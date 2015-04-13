@@ -187,6 +187,11 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
+	function master_data(){
+		$data['page'] = 'master_data/master_data';
+		$this->load->view('template',$data);
+	}
+	
 	// end new function for new module
 
 }
