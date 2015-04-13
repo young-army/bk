@@ -218,10 +218,11 @@ class Dashboard extends CI_Controller {
 	}
 	
 	function master_data(){
+		$data['master'] = $this->app_model->get_table_where('id_sub',0,'master_data','result');
 		$data['page'] = 'master_data/master_data';
 		$this->load->view('template',$data);
 	}
-	
+		
 	// end new function for new module
 
 }
