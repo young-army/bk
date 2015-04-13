@@ -42,18 +42,7 @@ class App_model extends CI_Model{
 	}
 
 
-	function ambil_services(){
-		$query = $this->db->query("select * from services")->result();
-		return $query;
-	}
 	
-
-	function simpan_services(){
-		$judul = $this->input->post('judul');
-		$author = $this->input->post('author');
-		$uraian = $this->input->post('uraian');
-		$gambar = $this->input->post('image_name');
-	}
 	
 	//MODEL EXPERTISE
 	
@@ -109,6 +98,28 @@ class App_model extends CI_Model{
 	
 	//END EXPERTISE
 	
+	function ambil_services(){
+		$query = $this->db->query("select * from services")->result();
+		return $query;
+	}
+	
+	function simpan_services(){
+		$judul = $this->input->post('judul');
+		$author = $this->input->post('author');
+		$uraian = $this->input->post('uraian');
+		$gambar = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		$data = array(
+		'judul' => $judul,
+		'author' => $author,
+		'keterangan' => $uraian,
+		'gambar' => $gambar,
+		'status' => $status
+		);
+		
+		$this->db->insert('services',$data);
+	}
+	
 	function delete_services($id){
 		$this->db->where('id',$id);
 		$this->db->delete('services');
@@ -129,28 +140,7 @@ class App_model extends CI_Model{
 		$this->db->query("update services set judul='$judul',author='$author',keterangan='$uraian',gambar='$gambar',status='$status' where id='$id'");
 	}
 
-
-	
-
-	/*function edit_expertise($id){
-		
-		$query = $this->db->query("select * from expertise where id='$id'")->row($id);
-		return $query;
-	}
-	
-	function update_expertise($id)
-	{
-		$judul = $this->input->post('judul');
-		$author = $this->input->post('author');
-		$uraian = $this->input->post('uraian');
-		$status = $this->input->post('status');
-	
-		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
-	}
-<<<<<<< HEAD
-	
 	// ACTIVITIES
-	
 	function ambil_activities(){
 		$query = $this->db->query("select * from activities")->result();
 		return $query;
@@ -201,8 +191,6 @@ class App_model extends CI_Model{
 		
 		$this->db->query("update activities set judul='$judul',lokasi='$lokasi',event='$event',tanggal='$tanggal',ringkasan='$ringkasan',uraian='$keterangan',file='$image',status='$status' where id='$id'");
 	}
-=======
-	*/
->>>>>>> 65ce000f4d960685f5c8b45af137eaf2bc5ebdab
+	// END ACTIVITIES
 
 }

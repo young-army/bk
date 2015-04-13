@@ -231,6 +231,8 @@ class Dashboard extends CI_Controller {
 		redirect('dashboard/activities');
 	}
 	
+	//END ACTIVITIES
+	
 	function innovation(){
 		$data['page'] = 'innovation/innovation';
 		$this->load->view('template',$data);
