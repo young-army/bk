@@ -38,17 +38,17 @@
                             </tr>
                             </thead>
                             <tbody>
-							
+							<?php  $no = 1; foreach($expertise as $row){?>
                             <tr class="odd gradeX">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $no;?></td>
+                                <td><?php echo $row->judul;?></td>
+                                <td><?php echo $row->author;?></td>
+                                <td><?php echo $row->status;?></td>
                                 <td>
-								<button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
-                               <button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
+								<a href="<?php echo base_url();?>dashboard/edit_expertise/<?php echo $row->id;?>"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
+                                <a href="<?php echo base_url();?>dashboard/delete_expertise/<?php echo $row->id;?>"onclick="return confirm('Apakah Anda Yakin?')"><button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
                             </tr>
-							
+							<?php $no++;}?>
                             </tbody>
                         </table>
                     </div>
