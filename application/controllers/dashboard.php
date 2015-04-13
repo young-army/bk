@@ -81,7 +81,7 @@ class Dashboard extends CI_Controller {
 		$data['page']	= 'background/add_background';
 		$this->load->view('template',$data);
 	}
-	
+	//START SERVICES
 	function services(){
 		$data['services'] = $this->app_model->ambil_services();
 		$data['page']	= 'services/services';
@@ -116,7 +116,7 @@ class Dashboard extends CI_Controller {
 		$this->app_model->update_services($id);
 		redirect('dashboard/services');
 	}
-	
+	//END SERVICES
 	
 
 
@@ -197,14 +197,38 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
+	// START ACTIVITIES
+	
 	function activities(){
+		$data['activities'] = $this->app_model->ambil_activities();
 		$data['page'] = 'activities/activities';
-		$this->load->view('template',$data);
+		$this->load->view('template_table',$data);
 	}
 	
 	function add_activities(){
 		$data['page'] = 'activities/add_activities';
 		$this->load->view('template',$data);
+	}
+	
+	function simpan_activities(){
+		$this->app_model->simpan_activities();
+		redirect('dashboard/activities');
+	}
+	
+	function delete_activities($id){
+		$this->app_model->delete_activities($id);
+		redirect('dashboard/activities');
+	}
+	function edit_activities($id){
+		$data['activities'] = $this->app_model->edit_activities($id);
+		$data['page'] = 'activities/edit_activities';
+		$this->load->view('template',$data);
+	}
+	
+	function update_activities($id){
+		$id = $this->input->post('id');
+		$this->app_model->update_activities($id);
+		redirect('dashboard/activities');
 	}
 	
 	function innovation(){
@@ -254,7 +278,10 @@ class Dashboard extends CI_Controller {
 	}
 		
 	// end new function for new module
-
+	
+	
+	
+	
 }
 
 

@@ -78,7 +78,7 @@ class App_model extends CI_Model{
 	}
 	
 	function edit_services($id){
-		$hasil = $this->db->query("select * from services where id='$id'")->row();
+		$hasil = $this->db->query("select * from services where id='$id'")->row($id);
 		return $hasil;
 	}
 	
@@ -112,6 +112,59 @@ class App_model extends CI_Model{
 		$status = $this->input->post('status');
 	
 		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
+	}
+	
+	// ACTIVITIES
+	
+	function ambil_activities(){
+		$query = $this->db->query("select * from activities")->result();
+		return $query;
+	}
+	
+	function simpan_activities(){
+		$judul = $this->input->post('judul');
+		$lokasi = $this->input->post('lokasi');
+		$event = $this->input->post('event');
+		$tanggal = $this->input->post('tanggal');
+		$ringkasan = $this->input->post('ringkasan');
+		$keterangan = $this->input->post('keterangan');
+		$image = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		$data = array(
+		'judul' => $judul,
+		'lokasi' => $lokasi,
+		'event' => $event,
+		'tanggal' => $tanggal,
+		'ringkasan' => $ringkasan,
+		'uraian' => $keterangan,
+		'file' => $image,
+		'status' => $status
+		);
+		
+		$this->db->insert('activities',$data);
+	}
+	
+	function delete_activities($id){
+		$this->db->where('id',$id);
+		$this->db->delete('activities');
+	}
+	
+	function edit_activities($id){
+		$query = $this->db->query("select * from activities where id='$id'")->row($id);
+		return $query;
+	}
+	
+	function update_activities($id){
+		$judul = $this->input->post('judul');
+		$lokasi = $this->input->post('lokasi');
+		$event = $this->input->post('event');
+		$tanggal = $this->input->post('tanggal');
+		$ringkasan = $this->input->post('ringkasan');
+		$keterangan = $this->input->post('keterangan');
+		$image = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		
+		$this->db->query("update activities set judul='$judul',lokasi='$lokasi',event='$event',tanggal='$tanggal',ringkasan='$ringkasan',uraian='$keterangan',file='$image',status='$status' where id='$id'");
 	}
 
 }
