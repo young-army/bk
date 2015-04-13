@@ -92,6 +92,8 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
+	//EXPERTISE
+	
 	function expertise()
 	{
 		$data['expertise'] = $this->app_model->expertise();
@@ -127,6 +129,8 @@ class Dashboard extends CI_Controller {
 		$this->app_model->update_expertise($id);
 		redirect('dashboard/expertise');
 	}
+	
+	//END EXPERTISE
 	
 	function career(){
 		$data['page'] = 'career/career';
