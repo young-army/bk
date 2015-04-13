@@ -1,32 +1,41 @@
 <ul class="sidebar-menu">
+				<li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-align-justify"></i>
+                      <span>Menu Front</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="<?php echo base_url();?>dashboard/background">Background</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/services">Services</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/expertise">Expertise</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/career">Career</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/request">Request</a></li>
+                      <li><a href="<?php echo base_url();?>dashboard/menu_top">Menu Top</a></li>
+                  </ul>
+              </li>
 			  <li>
-                  <a class="" href="<?php echo base_url();?>dashboard/background">
-                      <i class="icon-picture"></i>
-                      <span>Background</span>
+                  <a class="" href="<?php echo base_url();?>dashboard/news">
+                      <i class="icon-tags"></i>
+                      <span>News</span>
                   </a>
               </li>
 			  <li>
-                  <a href="<?php echo base_url();?>dashboard/services" class="">
-                      <i class="icon-briefcase"></i>
-                      <span>Services</span>
+                  <a class="" href="<?php echo base_url();?>dashboard/activities">
+                      <i class="icon-plane"></i>
+                      <span>Activities</span>
                   </a>
               </li>
 			  <li>
-                  <a href="<?php echo base_url();?>dashboard/expertise" class="">
-                      <i class="icon-star-empty"></i>
-                      <span>Expertise</span>
+                  <a class="" href="<?php echo base_url();?>dashboard/innovation">
+                      <i class="icon-signal"></i>
+                      <span>Innovation</span>
                   </a>
               </li>
 			  <li>
-                  <a href="<?php echo base_url();?>dashboard/career" class="">
-                      <i class="icon-road"></i>
-                      <span>Career</span>
-                  </a>
-              </li>
-			  <li>
-                  <a href="<?php echo base_url();?>dashboard/request" class="">
-                      <i class="icon-random"></i>
-                      <span>Request</span>
+                  <a class="" href="<?php echo base_url();?>dashboard/market_analytics">
+                      <i class="icon-shopping-cart"></i>
+                      <span>Market Analytics</span>
                   </a>
               </li>
               <li>
@@ -35,6 +44,7 @@
                       <span>Setting</span>
                   </a>
               </li>
+			  <li>&nbsp;</li>
 			  <li>
                   <a class="" href="<?php echo base_url();?>login/logout">
                     <i class="icon-arrow-left"></i>
