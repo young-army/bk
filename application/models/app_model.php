@@ -47,7 +47,7 @@ class App_model extends CI_Model{
 		return $query;
 	}
 	
-<<<<<<< HEAD
+
 	function simpan_services(){
 		$judul = $this->input->post('judul');
 		$author = $this->input->post('author');
@@ -57,20 +57,19 @@ class App_model extends CI_Model{
 	
 	//MODEL EXPERTISE
 	
-=======
->>>>>>> a53e22e54ad5bce1cbd857bad12ccff5f51b6341
+
 	function expertise()
 	{
 		$query=$this->db->query("select * from expertise")->result();
 		return $query;
 	}
 	
-	function simpan_services()
+	function save_setting()
 	{
 		$judul = $this->input->post('judul');
 		$author = $this->input->post('author');
 		$uraian = $this->input->post('uraian');
-		$gambar = $this->input->post('image_name');
+		//$gambar = $this->input->post('image_name');
 		$status = $this->input->post('status');
 		$data = array(
 		'judul' => $judul,
@@ -78,7 +77,7 @@ class App_model extends CI_Model{
 		'keterangan' => $uraian,
 		'status' => $status
 		);
-<<<<<<< HEAD
+
 		$this->db->insert('expertise',$data);
 	}
 	
@@ -101,10 +100,10 @@ class App_model extends CI_Model{
 		$status = $this->input->post('status');
 	
 		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
-=======
+
 		
 		$this->db->insert('services',$data);
->>>>>>> a53e22e54ad5bce1cbd857bad12ccff5f51b6341
+
 	}
 
 	
@@ -132,9 +131,9 @@ class App_model extends CI_Model{
 
 
 	
-<<<<<<< HEAD
-=======
-	function edit_expertise($id){
+
+	/*function edit_expertise($id){
+		
 		$query = $this->db->query("select * from expertise where id='$id'")->row($id);
 		return $query;
 	}
@@ -148,6 +147,6 @@ class App_model extends CI_Model{
 	
 		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
 	}
+	*/
 
->>>>>>> a53e22e54ad5bce1cbd857bad12ccff5f51b6341
 }
