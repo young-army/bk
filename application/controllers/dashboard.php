@@ -93,7 +93,7 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
-<<<<<<< HEAD
+
 	function simpan_services(){
 		$this->app_model->simpan_services();
 		redirect('dashboard/services');
@@ -117,14 +117,12 @@ class Dashboard extends CI_Controller {
 		redirect('dashboard/services');
 	}
 	
-	function expertise(){
-=======
-	//EXPERTISE
+	
 	
 	function expertise()
 	{
 		$data['expertise'] = $this->app_model->expertise();
->>>>>>> 2b5753820639722b45f77aa2efc36e45843a259f
+
 		$data['page']	= 'expertise/expertise';
 		$this->load->view('template',$data);
 	}
