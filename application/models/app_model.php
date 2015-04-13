@@ -40,23 +40,11 @@ class App_model extends CI_Model{
 		$this->db->where($field,$val_field);
 		$this->db->update($table,$data);
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
+
 
 	function ambil_services(){
 		$query = $this->db->query("select * from services")->result();
 		return $query;
-	}
-	
-	function simpan_services(){
-		$judul = $this->input->post('judul');
-		$author = $this->input->post('author');
-		$uraian = $this->input->post('uraian');
-		$gambar = $this->input->post('image_name');
-<<<<<<< HEAD
-=======
 	}
 	
 	function expertise()
@@ -65,12 +53,12 @@ class App_model extends CI_Model{
 		return $query;
 	}
 	
-	function save_setting()
+	function simpan_services()
 	{
 		$judul = $this->input->post('judul');
 		$author = $this->input->post('author');
 		$uraian = $this->input->post('uraian');
->>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
+		$gambar = $this->input->post('image_name');
 		$status = $this->input->post('status');
 		$data = array(
 		'judul' => $judul,
@@ -83,11 +71,6 @@ class App_model extends CI_Model{
 		$this->db->insert('services',$data);
 	}
 
-	function expertise()
-	{
-		$query=$this->db->query("select * from expertise")->result();
-		return $query;
-	}
 	
 	function delete_services($id){
 		$this->db->where('id',$id);
@@ -109,10 +92,7 @@ class App_model extends CI_Model{
 		$this->db->query("update services set judul='$judul',author='$author',keterangan='$uraian',gambar='$gambar',status='$status' where id='$id'");
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
 	function delete_expertise($id)
 	{
 		$this->db->where('id',$id);
@@ -133,8 +113,5 @@ class App_model extends CI_Model{
 	
 		$this->db->query("update expertise set judul='$judul',author='$author',keterangan='$uraian',status='$status' where id='$id'");
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
 }

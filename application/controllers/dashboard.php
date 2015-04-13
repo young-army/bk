@@ -118,11 +118,10 @@ class Dashboard extends CI_Controller {
 	}
 	
 	
-<<<<<<< HEAD
+
 
 	//EXPERTISE
-=======
->>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
+
 	
 	function expertise()
 	{
