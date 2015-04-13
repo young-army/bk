@@ -92,7 +92,9 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
-	function expertise(){
+	function expertise()
+	{
+		$data['expertise'] = $this->app_model->expertise();
 		$data['page']	= 'expertise/expertise';
 		$this->load->view('template',$data);
 	}
@@ -100,6 +102,30 @@ class Dashboard extends CI_Controller {
 	function add_expertise(){
 		$data['page']	= 'expertise/add_expertise';
 		$this->load->view('template',$data);
+	}
+	
+	function simpan_expertise(){
+		$this->app_model->save_setting();
+		redirect('dashboard/expertise');
+	}
+	
+	function delete_expertise($id){
+		$this->app_model->delete_expertise($id);
+		redirect('dashboard/expertise');
+	}
+	
+	function edit_expertise($id)
+	{	
+		$data['edit_expertise'] = $this->app_model->edit_expertise($id);
+		$data['page'] = 'expertise/edit_expertise';
+		$this->load->view('template',$data);
+	}
+	
+	function update_expertise()
+	{
+		$id = $this->input->post('id');
+		$this->app_model->update_expertise($id);
+		redirect('dashboard/expertise');
 	}
 	
 	function career(){
