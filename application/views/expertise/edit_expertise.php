@@ -24,17 +24,18 @@
 						</div>
                         <div class="widget-body">
                             <!-- BEGIN FORM-->
-                            <form method="post" action="<?php echo base_url();?>dashboard/simpan_expertise" class="form-horizontal" enctype="multipart/form-data">
-                            <div class="control-group">
+                            <form method="post" action="<?php echo base_url();?>dashboard/update_expertise" class="form-horizontal" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo $edit_expertise->id;?>">
+							<div class="control-group">
                                 <label class="control-label">Judul</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="judul"/>
+                                    <input type="text" class="span6 " name="judul" value="<?php echo $edit_expertise->judul;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Author</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="author"/>
+                                    <input type="text" class="span6 " name="author" value="<?php echo $edit_expertise->author;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">

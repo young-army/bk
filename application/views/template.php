@@ -108,8 +108,8 @@
    <!-- END CONTAINER -->
 
    <!-- BEGIN FOOTER -->
-   <div id="footer" style="background:#e5e5e5;color:black">
-       Copyright &copy; 2015 BangunKapasitas.co.id. Supported By Sinergi Cakra Sinatrya
+   <div id="footer" style="background:lightgray;color:black">
+       Copyright &copy; 2015 bangunkapasitas.co.id | Supported By PT Sinergi Cakra Sinatrya
    </div>
    <!-- END FOOTER -->
 

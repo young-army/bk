@@ -6,7 +6,7 @@
                <div class="span12">
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                    <h3 class="page-title">
-                 Expertise
+                 Market Analytics
                    </h3>
                    
                    <!-- END PAGE TITLE & BREADCRUMB-->
@@ -20,11 +20,11 @@
                 <!-- BEGIN EXAMPLE TABLE widget-->
                 <div class="widget black">
                     <div class="widget-title">
-                        <h4><i class="icon-reorder"></i> Expertise</h4>
+                        <h4><i class="icon-reorder"></i> Market Analytics</h4>
                             
                     </div>
                     <div class="widget-body">
-					<a href="<?php echo base_url();?>dashboard/add_expertise"><button class="btn btn-success"><i class="icon-plus icon-white" ></i> Tambah Data</button></a><br><br></style>
+					<a href="<?php echo base_url();?>dashboard/add_market_analytics"><button class="btn btn-success"><i class="icon-plus icon-white" ></i> Tambah Data</button></a><br><br></style>
 					
                         <table class="table table-striped table-bordered" id="sample_1">
                             <thead>
@@ -33,22 +33,24 @@
                                 <th>No</th>
                                 <th class="hidden-phone">Judul</th>
                                 <th class="hidden-phone">Author</th>
+                                <th class="hidden-phone">Tanggal</th>
                                 <th class="hidden-phone">Status</th>
                                 <th class="hidden-phone">Kontrol</th>
                             </tr>
                             </thead>
                             <tbody>
-							<?php  $no = 1; foreach($expertise as $row){?>
+							
                             <tr class="odd gradeX">
-                                <td><?php echo $no;?></td>
-                                <td><?php echo $row->judul;?></td>
-                                <td><?php echo $row->author;?></td>
-                                <td><?php echo $row->status;?></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
-								<a href="<?php echo base_url();?>dashboard/edit_expertise/<?php echo $row->id;?>"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
-                                <a href="<?php echo base_url();?>dashboard/delete_expertise/<?php echo $row->id;?>"onclick="return confirm('Apakah Anda Yakin?')"><button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
+								<a href="<?php echo base_url();?>dashboard/respon_request"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
+                               <button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
                             </tr>
-							<?php $no++;}?>
+							
                             </tbody>
                         </table>
                     </div>
