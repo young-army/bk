@@ -162,6 +162,31 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
+	function add_market_analytics(){
+		$data['page'] = 'market_analytics/add_market_analytics';
+		$this->load->view('template',$data);
+	}
+	
+	function user_access(){
+		$data['page'] = 'user/user_access';
+		$this->load->view('template',$data);
+	}
+	
+	function add_user_access(){
+		$data['page'] = 'user/add_user_access';
+		$this->load->view('template',$data);
+	}
+	
+	function user_group(){
+		$data['page'] = 'user/user_group';
+		$this->load->view('template',$data);
+	}
+	
+	function add_user_group(){
+		$data['page'] = 'user/add_user_group';
+		$this->load->view('template',$data);
+	}
+	
 	// end new function for new module
 
 }
