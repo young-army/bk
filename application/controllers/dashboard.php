@@ -118,8 +118,11 @@ class Dashboard extends CI_Controller {
 	}
 	
 	
+<<<<<<< HEAD
 
 	//EXPERTISE
+=======
+>>>>>>> 3b2eb3c5601844e521888b1cce0bae903555ef66
 	
 	function expertise()
 	{
@@ -245,6 +248,12 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 	
+	function master_data(){
+		$data['master'] = $this->app_model->get_table_where('id_sub',0,'master_data','result');
+		$data['page'] = 'master_data/master_data';
+		$this->load->view('template',$data);
+	}
+		
 	// end new function for new module
 
 }
