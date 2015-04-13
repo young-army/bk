@@ -83,13 +83,37 @@ class Dashboard extends CI_Controller {
 	}
 	
 	function services(){
+		$data['services'] = $this->app_model->ambil_services();
 		$data['page']	= 'services/services';
-		$this->load->view('template',$data);
+		$this->load->view('template_table',$data);
 	}
 	
 	function add_services(){
 		$data['page']	= 'services/add_services';
 		$this->load->view('template',$data);
+	}
+	
+	function simpan_services(){
+		$this->app_model->simpan_services();
+		redirect('dashboard/services');
+
+	}
+	
+	function delete_services($id){
+		$this->app_model->delete_services($id);
+		redirect('dashboard/services');
+	}
+	
+	function edit_services($id){
+		$data['services'] = $this->app_model->edit_services($id);
+		$data['page'] = 'services/edit_services';
+		$this->load->view('template',$data);
+	}
+	
+	function update_services($id){
+		$id = $this->input->post('id');
+		$this->app_model->update_services($id);
+		redirect('dashboard/services');
 	}
 	
 	function expertise(){
