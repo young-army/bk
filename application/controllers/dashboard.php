@@ -136,6 +136,56 @@ class Dashboard extends CI_Controller {
 		$this->load->view('template_table',$data);
 	}
 	
+	function respon_request(){
+		$data['page'] = 'request/respon';
+		$this->load->view('template',$data);
+	}
+	
+	function menu_top(){
+		$data['page'] = 'menu_top/menu_top';
+		$this->load->view('template',$data);
+	}
+	
+	function add_menu_top(){
+		$data['page'] = 'menu_top/add_menu_top';
+		$this->load->view('template',$data);
+	}
+	
+	function news(){
+		$data['page'] = 'news/news';
+		$this->load->view('template',$data);
+	}
+	
+	function add_news(){
+		$data['page'] = 'news/add_news';
+		$this->load->view('template',$data);
+	}
+	
+	function activities(){
+		$data['page'] = 'activities/activities';
+		$this->load->view('template',$data);
+	}
+	
+	function add_activities(){
+		$data['page'] = 'activities/add_activities';
+		$this->load->view('template',$data);
+	}
+	
+	function innovation(){
+		$data['page'] = 'innovation/innovation';
+		$this->load->view('template',$data);
+	}
+	
+	function add_innovation(){
+		$data['page'] = 'innovation/add_innovation';
+		$this->load->view('template',$data);
+	}
+	
+	function market_analytics(){
+		$data['page'] = 'market_analytics/market_analytics';
+		$this->load->view('template',$data);
+	}
+	
 	// end new function for new module
 
 }
