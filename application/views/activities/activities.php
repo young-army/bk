@@ -57,7 +57,7 @@
                                 <td><?php echo $row->status;?></td>
                                 <td>
 								<a href="<?php echo base_url();?>dashboard/edit_activities/<?php echo $row->id;?>"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
-                               <a href="<?php echo base_url();?>dashboard/delete_activities/<?php echo $row->id;?>"><button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
+                               <a href="<?php echo base_url();?>dashboard/delete_activities/<?php echo $row->id;?>"onclick="return confirm('Apakah Anda Yakin?')"><button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
                             </tr>
 							<?php $no++;}?>
                             </tbody>
