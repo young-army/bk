@@ -19,29 +19,29 @@
                 <!-- BEGIN EXAMPLE TABLE widget-->
                 <div class="widget black">
                         <div class="widget-title">
-                            <h4><i class="icon-reorder"></i> Tambah Data Innovation</h4>
+                            <h4><i class="icon-reorder"></i>Edit Innovation</h4>
 							
 						</div>
                         <div class="widget-body">
                             <!-- BEGIN FORM-->
-                            <form method="post" action="<?php echo base_url();?>dashboard/simpan_innovation" class="form-horizontal" enctype="multipart/form-data">
-                            
+                            <form method="post" action="<?php echo base_url();?>dashboard/update_innovation" class="form-horizontal" enctype="multipart/form-data">
+                             <input type="hidden" name="id" value="<?php echo $innovation->id;?>">
 							<div class="control-group">
                                 <label class="control-label">Judul</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="judul"/>
+                                    <input type="text" class="span6 " name="judul" value="<?php echo $innovation->judul;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Lokasi</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="lokasi"/>
+                                    <input type="text" class="span6 " name="lokasi" value="<?php echo $innovation->lokasi;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Event</label>
                                 <div class="controls">
-                                    <select class="span6 " name="event"/>
+                                    <select class="span6 " name="event" value="<?php echo $innovation->event;?>"/>
 									<option value="1">jalan-jalan</option>
 									</select>
                                 </div>
@@ -49,25 +49,25 @@
 							<div class="control-group">
                                 <label class="control-label">Tanggal</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="tanggal"/>
+                                    <input type="text" class="span6 " name="tanggal" value="<?php echo $innovation->tanggal;?>"/>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Ringkasan</label>
                                 <div class="controls">
-                                    <textarea class="span6 " name="ringkasan"></textarea>
+                                    <textarea class="span6 " name="ringkasan"><?php echo $innovation->ringkasan;?></textarea>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Keterangan</label>
                                 <div class="controls">
-                                    <textarea class="span6 " name="keterangan"></textarea>
+                                    <textarea class="span6 " name="keterangan" ><?php echo $innovation->uraian;?></textarea>
                                 </div>
                             </div>
 							<div class="control-group">
                                 <label class="control-label">Image Kecil</label>
                                 <div class="controls">
-                                    <input type="text" class="span6 " name="image_name" style="width:150px"/>
+                                    <input type="text" class="span6 " name="image_name" style="width:150px" value="<?php echo $innovation->file;?>"/>
                                     <input type="file" class="span6 " name="image" />
                                 </div>
                             </div>

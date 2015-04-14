@@ -32,25 +32,34 @@
                             <tr>
                                 <th>No</th>
                                 <th class="hidden-phone">Judul</th>
-                                <th class="hidden-phone">Author</th>
+                                <th class="hidden-phone">Lokasi</th>
+                                <th class="hidden-phone">Event</th>
                                 <th class="hidden-phone">Tanggal</th>
+                                <th class="hidden-phone">Ringkasan</th>
+                                <th class="hidden-phone">Keterangan</th>
+                                <th class="hidden-phone">Image</th>
                                 <th class="hidden-phone">Status</th>
                                 <th class="hidden-phone">Kontrol</th>
                             </tr>
                             </thead>
                             <tbody>
-							
+							<?php $no=1;
+							foreach ($innovation as $row){?>
                             <tr class="odd gradeX">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $no;?></td>
+                                <td><?php echo $row->judul;?></td>
+                                <td><?php echo $row->lokasi;?></td>
+                                <td><?php echo $row->event;?></td>
+                                <td><?php echo $row->tanggal;?></td>
+                                <td><?php echo $row->ringkasan;?></td>
+                                <td><?php echo $row->uraian;?></td>
+                                <td><?php echo $row->file;?></td>
+                                <td><?php echo $row->status;?></td>
                                 <td>
-								<a href="<?php echo base_url();?>dashboard/respon_request"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
-                               <button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
+								<a href="<?php echo base_url();?>dashboard/edit_innovation/<?php echo $row->id;?>"><button class="btn btn-small btn-primary"><i class="icon-pencil icon-white"></i> Edit</button></a>
+                               <a href="<?php echo base_url();?>dashboard/delete_innovation/<?php echo $row->id;?>"><button class="btn btn-small btn-danger"><i class="icon-remove icon-white"></i> Delete</button></a></td>
                             </tr>
-							
+							<?php $no++;}?>
                             </tbody>
                         </table>
                     </div>

@@ -219,6 +219,7 @@ class Dashboard extends CI_Controller {
 		$this->app_model->delete_activities($id);
 		redirect('dashboard/activities');
 	}
+	
 	function edit_activities($id){
 		$data['activities'] = $this->app_model->edit_activities($id);
 		$data['page'] = 'activities/edit_activities';
@@ -233,15 +234,42 @@ class Dashboard extends CI_Controller {
 	
 	//END ACTIVITIES
 	
+	// INNOVATION
+	
 	function innovation(){
+		$data['innovation'] = $this->app_model->ambil_innovation();
 		$data['page'] = 'innovation/innovation';
-		$this->load->view('template',$data);
+		$this->load->view('template_table',$data);
 	}
 	
 	function add_innovation(){
 		$data['page'] = 'innovation/add_innovation';
 		$this->load->view('template',$data);
 	}
+	
+	function simpan_innovation(){
+		$this->app_model->simpan_innovation();
+		redirect('dashboard/innovation');
+	}
+	
+	function delete_innovation($id){
+		$this->app_model->delete_innovation($id);
+		redirect('dashboard/innovation');
+	}
+	
+	function edit_innovation($id){
+		$data['innovation'] = $this->app_model->edit_innovation($id);
+		$data['page'] = 'innovation/edit_innovation';
+		$this->load->view('template',$data);
+	}
+	
+	function update_innovation($id){
+		$id = $this->input->post('id');
+		$this->app_model->update_innovation($id);
+		redirect('dashboard/innovation');
+	}
+	
+	// END INNOVATION
 	
 	function market_analytics(){
 		$data['page'] = 'market_analytics/market_analytics';

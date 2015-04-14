@@ -192,5 +192,60 @@ class App_model extends CI_Model{
 		$this->db->query("update activities set judul='$judul',lokasi='$lokasi',event='$event',tanggal='$tanggal',ringkasan='$ringkasan',uraian='$keterangan',file='$image',status='$status' where id='$id'");
 	}
 	// END ACTIVITIES
+	
+	//INNOVATION
+	
+	function ambil_innovation(){
+		$query = $this->db->query("select * from innovation")->result();
+		return $query;
+	}
+	
+	function simpan_innovation(){
+		$judul = $this->input->post('judul');
+		$lokasi = $this->input->post('lokasi');
+		$event = $this->input->post('event');
+		$tanggal = $this->input->post('tanggal');
+		$ringkasan = $this->input->post('ringkasan');
+		$keterangan = $this->input->post('keterangan');
+		$image = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		$data = array(
+		'judul' => $judul,
+		'lokasi' => $lokasi,
+		'event' => $event,
+		'tanggal' => $tanggal,
+		'ringkasan' => $ringkasan,
+		'uraian' => $keterangan,
+		'file' => $image,
+		'status' => $status
+		);
+		
+		$this->db->insert('innovation',$data);
+	}
+	
+	function delete_innovation($id){
+		$this->db->where('id',$id);
+		$this->db->delete('innovation');
+	}
+	
+	function edit_innovation($id){
+		$query = $this->db->query("select * from innovation where id='$id'")->row($id);
+		return $query;
+	}
+	
+	function update_innovation($id){
+		$judul = $this->input->post('judul');
+		$lokasi = $this->input->post('lokasi');
+		$event = $this->input->post('event');
+		$tanggal = $this->input->post('tanggal');
+		$ringkasan = $this->input->post('ringkasan');
+		$keterangan = $this->input->post('keterangan');
+		$image = $this->input->post('image_name');
+		$status = $this->input->post('status');
+		
+		$this->db->query("update innovation set judul='$judul',lokasi='$lokasi',event='$event',tanggal='$tanggal',ringkasan='$ringkasan',uraian='$keterangan',file='$image',status='$status' where id='$id'");
+	}
+	// END INNOVATION
+	
 
 }
